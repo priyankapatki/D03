@@ -62,12 +62,19 @@ def is_between(x, y, z):
 
 def is_palindrome(main_string):
         n = len(main_string)
-        a = len(main_string) // 2    # to find the middle of the string
-        reverse_string = main_string[::-1]   # reversing the string
-        if main_string[:a] == reverse_string[:a]:
+        # a = len(main_string) // 2    # to find the middle of the string
+        # reverse_string = main_string[::-1]   # reversing the string
+        # if main_string[:a] == reverse_string[:a]:
+        #     return True
+        # else:
+        #     return False
+        if n > 1:
+            if main_string[0] == main_string[n-1]:
+              return is_palindrome(main_string[1:n-1])  # compares the first and last letter of the string
+            else:
+              return False
+        else:                    # evaluates strings with length 1 or 0
             return True
-        else:
-            return False
 
 
 
